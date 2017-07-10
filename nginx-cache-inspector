@@ -64,7 +64,7 @@ function get_cache_item_key() {
 ## Get a cache item TTL.
 ## $1 - cache file.
 function get_cache_item_ttl() {
-    od -dL $1 | sed -n '2p' | awk '{print $1 - $2}'
+    od -dL $1 | sed -n '4p' | awk '{print $2 - $1}'
 } # get_cache_item_ttl
 
 ## Inspects an item from the given cache zone.
